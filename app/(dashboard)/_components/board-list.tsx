@@ -1,50 +1,29 @@
-
-
 import React from 'react'
-
+import EmptySearch from './empty-search'
+import EmptyFavorites from './empty-favorites'
+import EmptyBoards from './empty-boards'
 type Props = {
-    orgId: string;
-    query:{
-        search?: string;
-        favorites?: string;
-    }
+  orgId: string,
+  query: {
+    search?: string,
+    favorites?: string
+  }
 }
 
-export default function BoardList({
-    orgId,query
-}: Props) {
-    const data = [];
+export default function BoardList ({ orgId, query }: Props) {
+  const data = []
 
-    if(!data?.length && query.search){
-       return (
-        <div className=''>
-          Try searching for something else.
-        </div>
-       )
-    }
+  if (!data?.length && query.search) {
+    return <EmptySearch />
+  }
 
-    if(!data?.length && query.favorites){
-        return (
-         <div className=''>
-            No favorites
-         </div>
-        )
-     }
+  if (!data?.length && query.favorites) {
+    return <EmptyFavorites />
+  }
 
-     
-    if(!data?.length){
-        return (
-         <div className=''>
-            No boards at all
-         </div>
-        )
-     }
+  if (!data?.length) {
+    return <EmptyBoards />
+  }
 
-
-
-  return (
-    <div className="">
-
-    </div>
-  )
+  return <div className=''></div>
 }
