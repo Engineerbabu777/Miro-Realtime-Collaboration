@@ -41,3 +41,47 @@ export const create = mutation({
     return board
   }
 })
+
+export const remove = mutation({
+  args: { id: v.id('boards') },
+  async handler (ctx, args) {
+    // CHECKING USER IDENTITY!
+    const identity = await ctx.auth.getUserIdentity()
+
+    // IF USER IS NOT LOGGED IN!
+    if (!identity) {
+      throw new Error('You must be logged in to create a board')
+    }
+
+    await ctx.db.delete(args.id)
+  }
+})
+
+export const update = mutation({
+  args: { id: v.id('boards'), title: v.string() },
+  async handler (ctx, args) {
+    // CHECKING USER IDENTITY!
+    const identity = await ctx.auth.getUserIdentity()
+
+    // IF USER IS NOT LOGGED IN!
+    if (!identity) {
+      throw new Error('You must be logged in to create a board')
+    }
+
+    const title = args.title.trim();
+
+    if(!title){
+      throw new Error("Title is required!");
+    }
+
+    if(title.length > 60){
+      throw new Error("Title is too long!");
+    }
+
+    const board = await ctx.db.patch(args.id, {
+      title: args.title
+    })
+
+    return board;
+  }
+})
