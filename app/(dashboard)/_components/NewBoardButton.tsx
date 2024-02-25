@@ -34,7 +34,7 @@ export default function NewBoardButton({
   return (
     <button
     disabled={pending || disabled}
-    className={cn("col-span-1 aspect-[100/127] bg-blue-600 rounded-lg hover:bg-blue-800 flex flex-col items-center justify-center py-6",disabled && "opacity-75")} onClick={onClickHandler} >
+    className={cn("col-span-1 aspect-[100/127] bg-blue-600 rounded-lg hover:bg-blue-800 flex flex-col items-center justify-center py-6",disabled && "opacity-75 hover:bg-blue-500 cursor-not-allowed")} onClick={onClickHandler} >
        <div />
        <Plus className="h-12 w-12 text-white stroke-1 "/>
        <p className="text-sm text-white font-light">New board</p>
