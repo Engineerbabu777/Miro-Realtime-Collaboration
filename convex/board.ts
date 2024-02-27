@@ -54,6 +54,17 @@ export const remove = mutation({
     }
 
     await ctx.db.delete(args.id)
+
+    const existingFav = await ctx.db.query("userFavorites")
+    .withIndex("by_user_board",(q) => q.eq("userId",identity.subject)
+    .eq("boardId",args.id)).unique();
+
+    if(existingFav){
+      await ctx.db.delete(existingFav._id)
+    }
+
+
+
   }
 })
 
