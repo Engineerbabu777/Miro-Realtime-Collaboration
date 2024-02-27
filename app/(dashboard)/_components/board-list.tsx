@@ -18,7 +18,7 @@ type Props = {
 }
 
 export default function BoardList ({ orgId, query }: Props) {
-  const data = useQuery(api.boards.get, { orgId })
+  const data = useQuery(api.boards.get, { orgId,search:query.search })
 
   if (data === undefined) {
     return (
