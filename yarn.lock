@@ -1430,6 +1430,11 @@ concat-map@0.0.1:
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==
 
+convex-helpers@^0.1.22:
+  version "0.1.22"
+  resolved "https://registry.yarnpkg.com/convex-helpers/-/convex-helpers-0.1.22.tgz#bf58d99ff60e30c4f8b70f4c85c340ca2bc1a37d"
+  integrity sha512-UTDxdbwlm5jBGPd9U5inatjuThg+YyQyuJ+cH2vAX+A4mWM7c2REZQ+LbjUnIxkAjxCRNq3ZD61qqQW9x6a6EQ==
+
 convex@^1.9.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/convex/-/convex-1.9.0.tgz#01bfe4cd29a356546e30201a53a3b213e18ad03a"
