@@ -36,8 +36,14 @@ export const get = query({
     let boards = [];
 
     if (title) {
-      boards = await ctx.db.query("boards")
-      .withSearchIndex("search_title", q => q.search("title", title).eq("orgId",args.orgId))
+      boards = await ctx.db
+        .query("boards")
+        .withSearchIndex("search_title", (q) => 
+          q
+            .search("title", title)
+            .eq("orgId", args.orgId)
+        )
+        .collect();
     } else {
       boards = await ctx.db
         .query('boards')
