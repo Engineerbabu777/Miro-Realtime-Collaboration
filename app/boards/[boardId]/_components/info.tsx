@@ -24,6 +24,7 @@ export default function Info({
   boardId
 }:{boardId:string}){
 
+  const { onOpen } = useRenameModal();
   
   const data = useQuery(api.board.get, {
     id: boardId as Id<"boards">,
