@@ -29,6 +29,13 @@ export default function Canvas ({ boardId }: Props) {
     }))
   },[])
 
+
+  const onPointerLeave = useMutation((
+    {setMyPresence} 
+  ) => {
+      setMyPresence({cursor:null});
+  },[])
+
   const onPointerMove = useMutation(({setMyPresence},e:React.PointerEvent) => {
     e.preventDefault();
     const current = pointerEventToCanvasPoint(e,camera);
@@ -50,6 +57,7 @@ export default function Canvas ({ boardId }: Props) {
       className="h-[100vh] w-[100vw]"
       onWheel={onWheelMove}
       onPointerMove={onPointerMove}
+      onPointerLeave={onPointerLeave}
       >
         <g>
           <CursorPresence />
