@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { ToolButton } from "./too-button";
+import { ToolButton } from "./tool-button";
 import {
 	Circle,
 	MousePointer2,
@@ -22,7 +22,7 @@ interface ToolbarProps {
 	canRedo: boolean;
 }
 
-export default function Toolbar({
+export function Toolbar({
 	canRedo,
 	canUndo,
 	canvasState,
