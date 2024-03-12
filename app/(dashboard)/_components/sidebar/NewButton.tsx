@@ -3,7 +3,7 @@ import { Plus } from 'lucide-react'
 import { CreateOrganization } from '@clerk/nextjs'
 
 import { Dialog, DialogTrigger, DialogContent } from '@/components/ui/dialog'
-import Hint from '@/components/hint'
+import {Hint} from '@/components/hint'
 type Props = {}
 
 export default function NewButton ({}: Props) {

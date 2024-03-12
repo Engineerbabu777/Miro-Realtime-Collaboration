@@ -16,7 +16,7 @@ type Props = {
   alignOffset?: number
 }
 
-export default function Hint ({
+export function Hint ({
   children,
   label,
   align,

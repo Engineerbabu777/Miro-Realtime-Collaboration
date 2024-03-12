@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils'
 import React from 'react'
 import Image from 'next/image'
 import { useOrganization, useOrganizationList } from '@clerk/nextjs'
-import Hint from '@/components/hint'
+import {Hint} from '@/components/hint'
 
 type Props = {
   id: string,
